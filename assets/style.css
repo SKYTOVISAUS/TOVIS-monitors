@@ -1,5 +1,11 @@
-.lead { font-size: 16px; color: #555; margin: 0 0 16px; }
+/* Lead sentence under the title */
+.lead {
+  font-size: 16px;
+  color: #555;
+  margin: 0 0 16px;
+}
 
+/* Model list layout (multi-column, no bullets) */
 .model-grid ul {
   list-style: none;
   padding-left: 0;
@@ -10,11 +16,13 @@
   column-gap: 22px;
 }
 
+/* Keep each item together in a column */
 .model-grid li {
   break-inside: avoid;
   margin: 0 0 10px;
 }
 
+/* Code-pill styling */
 .model-grid code {
   display: inline-block;
   font-size: 14px;
