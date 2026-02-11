@@ -1,8 +1,11 @@
-body { font-family: Arial, sans-serif; margin: 0; line-height: 1.5; }
-.wrap { max-width: 980px; margin: 0 auto; padding: 18px; }
-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-.brand { text-decoration: none; font-weight: 700; color: #111; }
-nav a { margin-left: 12px; text-decoration: none; color: #111; }
-.footer { border-top: 1px solid #eee; margin-top: 28px; color: #666; font-size: 14px; }
-.card { border: 1px solid #eee; border-radius: 12px; padding: 18px; }
-.muted { color: #666; }
+.model-list ul {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+  column-gap: 28px;
+}
+
+.model-list li {
+  break-inside: avoid;
+  margin-bottom: 8px;
+}
