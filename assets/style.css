@@ -1,8 +1,5 @@
-/* Typography improvements */
-h1 { font-size: 38px; margin: 16px 0 10px; letter-spacing: -0.3px; }
 .lead { font-size: 16px; color: #555; margin: 0 0 16px; }
 
-/* Model list styling */
 .model-grid ul {
   list-style: none;
   padding-left: 0;
