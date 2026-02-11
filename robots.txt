@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skytovisaus.github.io/TOVIS-monitors/sitemap.xml
