@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ page.title | escape }}</title>
+  {% if page.description %}
+  <meta name="description" content="{{ page.description | escape }}">
+  {% else %}
+  <meta name="description" content="{{ site.description | escape }}">
+  {% endif %}
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="{{ '/' | relative_url }}">TOVIS Monitors</a>
+    <nav>
+      <a href="{{ '/models/' | relative_url }}">Models</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    {{ content }}
+  </main>
+
+  <footer class="wrap footer">
+    <p>© {{ "now" | date: "%Y" }} TOVIS Monitors. Genuine parts & technical support.</p>
+  </footer>
+</body>
+</html>
