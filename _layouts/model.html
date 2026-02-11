@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<article class="card">
+  <h1>{{ page.model }}</h1>
+  <p class="muted">
+    Part / model lookup page for <strong>{{ page.model }}</strong>.
+  </p>
+
+  <section>
+    <h2>What this page is for</h2>
+    <ul>
+      <li>Identify the exact model/part number: <strong>{{ page.model }}</strong></li>
+      <li>Request genuine parts & technical support (AU / NZ)</li>
+      <li>Reduce ordering errors with a dedicated reference page</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How to request a quote</h2>
+    <ol>
+      <li>Send the model number <strong>{{ page.model }}</strong></li>
+      <li>Include photos of label / rear sticker (if available)</li>
+      <li>Include quantity, location, and any urgency</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Notes</h2>
+    <p class="muted">Add specs, compatibility notes, or photos here anytime.</p>
+  </section>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "TOVIS monitor part {{ page.model }}",
+  "sku": "{{ page.model }}",
+  "brand": { "@type": "Brand", "name": "TOVIS" }
+}
+</script>
