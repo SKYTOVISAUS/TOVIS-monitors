@@ -1,4 +1,10 @@
 title: Tovis Monitor
-description: Genuine Tovis monitor parts and technical support for gaming monitors across Australia and New Zealand.
+description: Genuine Tovis monitor parts and technical support for Tovis monitor.
 url: https://skytovisaus.github.io
 baseurl: /TOVIS-monitors
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins: []
