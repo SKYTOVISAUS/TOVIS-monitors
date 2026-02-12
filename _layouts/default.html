@@ -4,32 +4,61 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>{{ page.title | escape }}</title>
-  {% if page.description %}
-  <meta name="description" content="{{ page.description | escape }}">
-  {% else %}
-  <meta name="description" content="{{ site.description | escape }}">
-  {% endif %}
+  <!-- SEO title -->
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 
-  <link rel="canonical" href="{{ page.url | absolute_url }}" />
-  <meta name="robots" content="index,follow" />
+  <!-- SEO description -->
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+
+  <!-- robots -->
+  <meta name="robots" content="index,follow">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}" />
+
+  <!-- Structured data (WebSite) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"{{ site.title | escape }}",
+    "url":"{{ site.url }}{{ site.baseurl }}/"
+  }
+  </script>
 </head>
+
 <body>
-  <header class="wrap">
-    
-    <nav>
-      <a href="{{ '/models/' | relative_url }}">Models</a>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <a class="brand-link" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <div class="tagline">{{ site.description }}</div>
+      </div>
+
+      <!-- Keep nav simple -->
+      <nav class="top-nav">
+        <a class="nav-link" href="{{ '/models/' | relative_url }}">Models</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="wrap">
+  <main class="container content">
     {{ content }}
   </main>
 
-  <footer class="wrap footer">
-    <p>© {{ "now" | date: "%Y" }} TOVIS Monitors. Genuine parts & technical support.</p>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© {{ site.title }} — Built on GitHub Pages.</small>
+    </div>
   </footer>
 </body>
 </html>
